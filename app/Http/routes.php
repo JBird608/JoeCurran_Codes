@@ -11,6 +11,16 @@
 |
 */
 
+// Regesting Home Page //
 Route::get('/', function () {
-    return view('welcome');
+    return view('page.home');
 });
+
+// Regestering Standard Pages //
+Route::get('about', 'PagesController@about');
+Route::get('contact', 'PagesController@contact');
+
+
+// Regestering Blog Requests //
+Route::get('blog', 'BlogController@blog');
+
