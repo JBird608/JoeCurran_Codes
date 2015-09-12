@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('core_title')
-    Testing The Title of the Page!
+    Joe Curran Codes :: I Love Coding! 
 @stop
 
 @section('content')
