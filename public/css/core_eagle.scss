@@ -1,0 +1,443 @@
+
+// Oh, Taking a look around are we? //
+
+// Well I guess your have some idea what you up to if you got this far. Any questions tweet @JBird608 or @JoeCurranCodes. //
+
+// Import other css files from assets directory. 1: Foundation Framework, 2: Core Fonts. //
+@import url("../assets/foundation/css/foundation.css");
+@import url("../assets/fonts/core_rhino.css"); // Note: This is a licenced font, see file for more details. //
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"); // Google Icon Font //
+
+// Font Types Imported //
+// 1: CoreThin, 2: CoreThinItalic, 3:CoreRegular 4: CoreBold, 5: CoreBlack. //
+
+// Colours - Standard //
+$white:       #fafafa;
+$shady-white: #a2a2a2;
+$purple:      #62448c; 
+//$purple: #ff7a00; // Orange // ff8f00
+$deep_purple: #4b2777;
+$tinted_gray: #272a33;
+$dark_gray:   #2b2b2b;
+$shadows:     #121212;
+
+// Colours - Fonts //
+$faint_grey: #5e5e5e;
+
+// Colours - Icons //
+$dribbble:   #ea4c89; 
+$twitter:    #28aae1;
+$pinterest:  #ab171e;
+$linkedin:   #007bb6;
+$behance:    #005CFF; 
+$skype:      #0078CA;
+$email:      #62448c;
+//$email: #ff7a00; // Orange //
+
+// Fonts //
+$CoreThin: 'CoreThin', sans-serif;
+$CoreThinItalic: 'CoreThinItalic', sans-serif;
+$CoreRegular: 'CoreRegular', sans-serif;
+$CoreBold: 'CoreBold', sans-serif;
+$CoreBlack: 'CoreBlack', sans-serif;
+
+// Mixins //
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+} 
+	// @include transition(color .5s ease); //
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); 
+} 
+	// @include opacity(0.8); //
+
+// Core Basics //
+body {
+	font-family: $CoreRegular;
+	font-size: 0.9rem;
+	
+	background: $white;
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+h1 {
+	
+}
+h2 {
+	
+}
+h3 {
+	
+}
+h4 {
+	font-size: 1.5rem;
+	text-transform: uppercase;	
+}
+h5 {
+	
+}
+h6 {
+	
+}
+p {
+	
+}
+span {
+	
+}
+a {
+	
+	text-decoration: none;
+	border-bottom: 1px dashed $purple;
+	
+	&:hover {
+		
+	}
+	
+	&:visited, &:active {
+		
+	}
+}
+
+
+// Core Eagle #IDs //
+#core_header_navigation {
+	
+}
+#core_footer {
+	margin: 1rem 0;
+	color: $white;
+	
+	h4 {
+		margin: 1rem 0 0;
+	}
+	p {
+		margin: 0;
+	}
+	form {
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		input[type="radio"] {
+			display: none;
+		}
+		input[type="radio"]:checked + label {
+			background-color: rgba(43, 43, 43, 1.0);	
+			content: "\f00c";	
+		}
+		input[type="radio"]:checked + label:before {
+			font-family: 'FontAwesome';
+			content: "\f00c\0020";
+		}
+		label {
+			color: $white;
+			padding: 0.5rem;
+			margin: 0.3rem 0;
+			border-radius: 0.2rem;
+			background-color: rgba(43, 43, 43, 0.5);
+			width: 100%;
+			display: block;
+			font-size: 0.9rem;
+			
+			&:before {
+				font-family: 'FontAwesome';
+				content: "\f069";
+				margin-right: 0.5rem;
+			}
+			
+			&:hover {
+				background-color: rgba(43, 43, 43, 0.8);
+			}
+			
+		}
+		input[type="button"] {
+			font-size: 0.9rem;
+			padding: 1rem;
+			margin: 0.3rem;
+			border-radius: 0.2rem;
+			border: none;
+			color: $white;
+			background-color: rgba(43, 43, 43, 0.5);
+			cursor: pointer;
+			
+			&:last-child{
+				margin-right: 0;	
+			}
+			
+			&:after {
+				font-family: 'FontAwesome';
+				content: "\f061";
+			}
+			
+			&:hover {
+				background-color: rgba(43, 43, 43, 0.8);
+			}
+		}
+		.align-right {
+			text-align: right;
+			vertical-align: middle;
+			
+			.voteas {
+				color: $shady-white;
+				margin: 0 1rem;
+			}
+		}
+		.btn-second {
+			background-color: rgba(43, 43, 43, 0.3) !important;
+			
+			&:hover {
+				background-color: rgba(43, 43, 43, 0.8) !important;
+			}
+		}
+	}
+}
+  
+#core-comments {
+	margin: 0rem 0 1rem 0; 
+	
+	.row {
+		border-top: 6px solid $purple;
+		
+	}
+	
+	h4 {
+		margin: 0.5rem 0 0 0;
+		
+		&:after {
+			content: '?';
+		}
+	}
+	
+	p {
+		margin: 0 0  0.5rem 0;
+	}
+	
+	.bold {
+		font-family: $CoreBold;
+	}	
+	
+	.core-comment-first {
+		padding: 0.5rem;
+		border: 1px solid $faint_grey;
+		margin-bottom: 0.5rem;
+		
+		.comment-user-display {
+			max-height: 5rem;
+			max-width:  5rem;
+			
+			// TODO Remove this for production //
+			height: 5rem;
+			width: 5rem;
+		}
+		
+		.comment {
+			
+		}
+		
+		.core-comment-second {
+			padding: 0.5rem 0.5rem 0.5rem 6rem;
+			border: 1px solid $faint_grey;
+			margin-bottom: 0.5rem;
+		}
+
+	}
+
+	
+}
+
+#core_follow {
+	background-color: $dark_gray;
+	color: $faint_grey;
+	padding: 3rem 0 2rem 0;
+	width: 100%;
+	
+	p {
+		font-family: 'CoreThin', sans-serif;
+		text-align: center;
+		
+		a {
+			color: $faint_grey;
+			border-color: $faint_grey;
+			@include transition(color .5s ease);
+			
+			&:hover {
+				color: $purple;
+				border-bottom: none;
+				
+			}
+		}
+	}
+	.social {
+		list-style: none;
+		margin: 0 0 3rem 0;
+		padding: 0;
+		text-align: center;
+		
+		li {
+			padding: 0;
+			display: inline-block;
+			margin: 1rem 0.5rem;
+			
+			a {
+				  display: block;
+				  width: 4rem;
+				  height: 4rem;
+				  //text-indent: -9999px;
+				  text-align: center;
+				  text-decoration: none;
+				  padding-top: 3rem;
+				  border-bottom: none;
+				  @include opacity(0.0);
+				  @include transition(opacity .5s ease);
+			}
+			
+			&:hover {
+				
+				a {
+					@include opacity(1);
+					//text-indent: 0px !important;
+					
+				}
+			}
+		}
+		
+		.social-twitter {
+			background: url('../img/social-twitter.svg') no-repeat center 0px;
+			background-size: 2.5rem;
+						
+			&:hover {
+				background: url('../img/social-twitter-hover.svg') no-repeat center 0px;	
+				background-size: 2.5rem;
+			}
+			
+			a {
+				color: $twitter;
+			}
+		}
+		
+		.social-pinterest {
+			background: url('../img/social-pinterest.svg') no-repeat center 0px;
+			background-size: 2.5rem;
+			
+			&:hover {
+				background: url('../img/social-pinterest-hover.svg') no-repeat center 0px;	
+				background-size: 2.5rem;
+			}
+			
+			a {
+				color: $pinterest;
+			}
+		}
+		.social-linkedin {
+			background: url('../img/social-linkedin.svg') no-repeat center 0px;
+			background-size: 2.5rem;
+			
+			&:hover {
+				background: url('../img/social-linkedin-hover.svg') no-repeat center 0px;	
+				background-size: 2.5rem;
+			}
+			
+			a {
+				color: $linkedin;
+			}
+		}
+		.social-behance {
+			background: url('../img/social-behance.svg') no-repeat center 0px;
+			background-size: 2.5rem;
+			
+			&:hover {
+				background: url('../img/social-behance-hover.svg') no-repeat center 0px;	
+				background-size: 2.5rem;
+			}
+			
+			a {
+				color: $behance;
+			}
+		}
+		.social-skype {
+			background: url('../img/social-skype.svg') no-repeat center 0px;
+			background-size: 2.5rem;
+			
+			&:hover {
+				background: url('../img/social-skype-hover.svg') no-repeat center 0px;	
+				background-size: 2.5rem;
+			}
+			
+			a {
+				color: $skype;
+			}
+		}
+		.social-email {
+			background: url('../img/social-email.svg') no-repeat center 0px;
+			background-size: 2.5rem;
+			
+			&:hover {
+				background: url('../img/social-email-hover.svg') no-repeat center 0px;	
+				background-size: 2.5rem;
+			}
+			
+			a {
+				color: $email;
+			}
+		}
+	}
+} // TODO :: Need Fonts Changing To Vars //
+#core_end {
+	font-family: $CoreRegular;
+	background-color: $shadows;
+	width: 100%;
+	text-align: center;
+	color: $shady-white;
+	font-size: 0.7rem;
+	
+	a {
+		text-transform: capitalize;
+		border-bottom: 1px dashed $shady-white;
+		color: inherit;
+		@include transition(color .5s ease);
+		
+		&:hover {
+			border-bottom: none;
+			color: $purple;
+		}
+	}
+	
+}
+// Core Eagle .classes //
+
+.bg-highlight {
+	background-color: $purple;
+	padding: 1rem 2rem;
+}
+.post-poll {
+	
+	&:after {
+		content: "?";
+	}
+}
+	// Type //
+	.bold {
+		font-weight: bold;
+	}
+	.italics {
+		font-style: italic;
+		font-family: $CoreThinItalic;
+	}
+
+// Core Eagle Font Awesome //
+.fa-margin-right {
+	margin-right: 0.5rem;
+}
+
+// Hope you enjoyed inspecting my code, :D //
+// See you again sometime? //
+
+// END // 
