@@ -2,17 +2,17 @@
 
 @section('core_title')
     Joe Curran Codes :: I Love Coding! 
-@endsection
+@stop
 
 @section('bolt_css')
 
-@endsection
+@stop
 
-@section('content')
+@section('core_content')
     <h2>What the hell is going on here?</h2>
     <p>Don't be silly there pal! Its only a simple page, this is nice!</p>
 
 
 
     <p>What about this!</p>
-@endsection
+@stop

@@ -6,13 +6,13 @@
     <title>@yield('core_title')</title>
 
     <!-- Core Website Styles -->
-    <link rel="stylesheet" href="css/core_eagle.css" />
+    <link rel="stylesheet" href="http://joecurrancodes.dev/css/core_eagle.css" />
     @yield('bolt_css')
 
 </head>
 <body id="top">
 
-@yield('content')
+@yield('core_content')
 
     <div id="core_follow">
         <div class="row">

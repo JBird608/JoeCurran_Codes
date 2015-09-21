@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostTypesTable extends Migration
+class CreateArticlesTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class CreatePostTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_types', function (Blueprint $table) {
+        Schema::create('articles_tags', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('Nname');
-            $table->string('template');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ class CreatePostTypesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('post_types');
+        Schema::drop('articles_tags');
     }
 }

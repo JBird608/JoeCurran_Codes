@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration
+class CreateArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,24 +12,25 @@ class CreatePostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->smallInteger('type')->default(1);
+            $table->string('cover');
             $table->string('title');
             $table->text('extract')->nullable();
             $table->text('body');
+            $table->smallInteger('author')->default(1);
 
-            // META DATA //
+            // METADATA //
             $table->string('slug');
-            $table->smallInteger('author_id')->default(1);
-            $table->string('category_id');
+            $table->smallInteger('category');
             $table->char('tags')->nullable();
-            $table->smallInteger('location')->nullable();
+            $table->smallInteger('location_id')->nullable();
             $table->smallInteger('poll_id')->nullable();
 
-            // TIMES //
+            // DATES //
             $table->timestamp('published');
             $table->timestamps();
+
         });
     }
 
@@ -40,6 +41,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('posts');
+        Schema::drop('articles');
     }
 }
