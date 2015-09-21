@@ -12,7 +12,7 @@
         <a href=" {{ action('BlogController@article', [$article->slug]) }}"><h2>{{ $article->title }}</h2></a>
         <p>
             {{ $article->extract }}
-        </p>
+
         <p>{{ $article->published }}</p>
     </article>
     @endforeach
