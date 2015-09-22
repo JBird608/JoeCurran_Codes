@@ -11,8 +11,32 @@
 
 </head>
 <body id="top">
+    <div id="core_linelink">
+        <div class="row">
+            <div class="large-12 columns">
+                <ul>
+                    <li><a href="#" alt="">Client Login</a></li>
+                    <li><a href="#" alt="">Access Webmail</a></li>
+                    <li><a href="#" alt="">Project Access</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-@yield('core_content')
+    <div id="core_content">
+
+        @yield('core_riser')
+
+        <div class="row">
+            <div class="small- 12 large-8 columns">
+                @yield('core_content')
+            </div>
+
+            <div class="small-12 large-4 columns">
+                @yield('core_aside')
+            </div>
+        </div>
+    </div>
 
     <div id="core_follow">
         <div class="row">
@@ -20,12 +44,12 @@
                 <p>&copy; 2015 <a href="#">Joe Curran</a>. Made in the UK.</p>
                 <p>Well, that's it. Why not check me out else where?</p>
                 <ul class="social">
-                    <li class="social-twitter"><a href="#" alt="">Twitter</a></li>
-                    <li class="social-pinterest"><a href="#" alt="">Pinterest</a></li>
-                    <li class="social-linkedin"><a href="#" alt="">LinkedIn</a></li>
-                    <li class="social-behance"><a href="#" alt="">Behance</a></li>
-                    <li class="social-skype"><a href="#" alt="">Skype</a></li>
-                    <li class="social-email"><a href="#" alt="">E-Mail</a></li>
+                    <li class="social-twitter"><a href="https://twitter.com/jbird608" alt="">Twitter</a></li>
+                    <li class="social-pinterest"><a href="https://www.pinterest.com/jbird608/" alt="">Pinterest</a></li>
+                    <li class="social-linkedin"><a href="https://uk.linkedin.com/in/joecurrancodes" alt="">LinkedIn</a></li>
+                    <li class="social-behance"><a href="https://www.behance.net/JBird608" alt="">Behance</a></li>
+                    <li class="social-skype"><a href="skype:JBird608?chat" alt="">Skype</a></li>
+                    <li class="social-email"><a href="mailto:hello@joecurran.codes?subject=Hello, Joe!" alt="">E-Mail</a></li>
                 </ul>
             </div>
         </div>

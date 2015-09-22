@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Article;
 
+use App\ArticleAuthor;
 use App\ArticleType;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -22,10 +24,15 @@ class BlogController extends Controller
         // GET THE ARTICLE BASED ON THE SLUG PROVIDED //
         $article = Article::where('slug', $slug)->firstOrFail();
 
+        $author = ArticleAuthor::where('id', $article->author)->select('name')->firstOrFail();
+        $author = $author->name;
+
+        $published = $article->published->format('m F Y');
+
         // GET THE ARTICLE TYPE //
         $type = ArticleType::where('id', $article->type)->firstOrFail();
 
         // RETURN THE VIEW WITH THE CORRECT TYPE //
-        return view('articles.' . $type->name, compact('article'));
+        return view('articles.' . $type->name, compact('article', 'author', 'published'));
     }
 }

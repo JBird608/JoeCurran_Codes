@@ -16,4 +16,6 @@ class Article extends Model
         'location',
         'published'
     ];
+
+    protected $dates = ['published'];
 }
