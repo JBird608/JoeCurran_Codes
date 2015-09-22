@@ -35,4 +35,10 @@ class BlogController extends Controller
         // RETURN THE VIEW WITH THE CORRECT TYPE //
         return view('articles.' . $type->name, compact('article', 'author', 'published'));
     }
+
+    public function create(){
+
+
+        return view('articles.create');
+    }
 }

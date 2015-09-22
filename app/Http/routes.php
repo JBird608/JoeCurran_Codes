@@ -23,6 +23,7 @@ Route::get('contact', 'PagesController@contact');
 
 // Regestering Blog Requests //
 Route::get('blog', 'BlogController@index');
+Route::get('article/create', 'BlogController@create');
 Route::get('article/{slug}', 'BlogController@article');
 
 

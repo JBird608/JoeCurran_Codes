@@ -28,7 +28,7 @@
         @yield('core_riser')
 
         <div class="row">
-            <div class="small- 12 large-8 columns">
+            <div class="small-12 large-8 columns">
                 @yield('core_content')
             </div>
 
