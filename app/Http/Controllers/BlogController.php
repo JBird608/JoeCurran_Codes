@@ -53,10 +53,7 @@ class BlogController extends Controller
      */
     public function show($slug){
         $article = Article::where('slug', $slug)->firstOrFail();
-        $article->author = User::where('id', $article->author)->select('name')->firstOrFail()->name;
-        $type = ArticleType::where('id', $article->type)->firstOrFail()->name;
-
-        return view('core.article.' . $type, compact('article'));
+        return view('core.article.' . $article->type, compact('article'));
     }
 
     /**

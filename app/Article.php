@@ -59,6 +59,39 @@ class Article extends Model
         $query->select(['title', 'slug', 'extract', 'published']);
     }
 
+    /**
+     * Function for changing the Author ID into the Author Name.
+     *
+     * @param $value
+     * @return
+     */
+    public function getAuthorAttribute($value){
+        $value = User::where('id', $value)->select('name')->firstOrFail()->name;
+        return $value;
+    }
+
+    /**
+     * Function for changing the Article Type into the Article Type Name.
+     *
+     * @param $value
+     * @return
+     */
+    public function getTypeAttribute($value){
+        $value = ArticleType::where('id', $value)->firstOrFail()->name;
+        return $value;
+    }
+
+    /**
+     * Function for changing the Article Type into the Article Type Name.
+     *
+     * @param $value
+     * @return
+     */
+    public function getCategoryAttribute($value){
+        $value = ArticleCategory::where('id', $value)->firstOrFail()->name;
+        return $value;
+    }
+
 
     /**
      * Function for converting date from form into Carbon & Time,

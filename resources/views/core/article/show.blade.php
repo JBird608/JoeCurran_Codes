@@ -17,7 +17,7 @@
         <ul class="meta">
             <li><i class="fa fa-calendar-o"></i>{{ Carbon\Carbon::parse($article->published)->format('d F Y') }}</li>
             <li><a href="#" title="More Random Articles"><i class="fa fa-user"></i>{{ $article->author }}</a></li>
-            <li><a href="#" title="More Random Articles"><i class="fa fa-archive"></i>Random</a></li>
+            <li><a href="#" title="More Random Articles"><i class="fa fa-archive"></i>{{ $article->category }}</a></li>
         </ul>
 
         {!! $article->body !!}
