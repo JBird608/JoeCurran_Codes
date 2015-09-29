@@ -35,5 +35,16 @@ class User extends Model implements AuthenticatableContract,
      *
      * @var array
      */
-    protected $hidden = ['password', 'remember_token'];
+    protected $hidden = ['level', 'password', 'remember_token'];
+
+    /**
+     * Function for converting date from form into Carbon & Time,
+     * before its saved in the database.
+     *
+     * @param $date
+     */
+    public function setLevelAttribute(){
+        $this->attributes['level'] = 1;
+    }
+
 }

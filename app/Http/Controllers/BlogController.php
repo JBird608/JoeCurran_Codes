@@ -7,6 +7,7 @@ use App\Article;
 use App\ArticleAuthor;
 use App\ArticleType;
 use App\Http\Requests\ArticleRequest;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
 use Request;
@@ -21,7 +22,7 @@ class BlogController extends Controller
      */
     public function index(){
         // Get latest published articles, sorted by date & select only given fields.
-        $articles = Article::latest('published')->published()->select(['title', 'slug', 'extract', 'published'])->get();
+        $articles = Article::latest('published')->published()->listing()->get();
 
         return view('core.article.index', compact('articles'));
     }
@@ -46,12 +47,16 @@ class BlogController extends Controller
     /**
      * Function for showing a blog article.
      *
-     * @param $id
+     * @param $slug
+     * @return \Illuminate\View\View
+     * @internal param $id
      */
     public function show($slug){
         $article = Article::where('slug', $slug)->firstOrFail();
-        dd($article);
-        return view('core.article.show');
+        $article->author = User::where('id', $article->author)->select('name')->firstOrFail()->name;
+        $type = ArticleType::where('id', $article->type)->firstOrFail()->name;
+
+        return view('core.article.' . $type, compact('article'));
     }
 
     /**
@@ -82,12 +87,6 @@ class BlogController extends Controller
     }
     
     
-//    public function index(){
-//
-//        $articles = Article::all();
-//
-//        return view('articles.listing', compact('articles'));
-//    }
 //    public function article($slug){
 //        // GET THE ARTICLE BASED ON THE SLUG PROVIDED //
 //        $article = Article::where('slug', $slug)->firstOrFail();
@@ -101,7 +100,7 @@ class BlogController extends Controller
 //        $type = ArticleType::where('id', $article->type)->firstOrFail();
 //
 //        // RETURN THE VIEW WITH THE CORRECT TYPE //
-//        return view('articles.' . $type->name, compact('article', 'author', 'published'));
+//
 //    }
 //
 //    public function create(){

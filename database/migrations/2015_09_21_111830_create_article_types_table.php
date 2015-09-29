@@ -17,6 +17,13 @@ class CreateArticleTypesTable extends Migration
             $table->string('name');
             $table->timestamps();
         });
+
+        // Insert some stuff
+        DB::table('article_types')->insert(
+            array(
+                array('id' => 1, 'name' => 'show')
+            )
+        );
     }
 
     /**

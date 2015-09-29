@@ -9,7 +9,12 @@
     <!-- TODO: Add metadate output for extra stylesheets if any. -->
 
     <!-- // META TAGS // -->
-    <title></title><!-- TODO: Output title from MetaData -->
+    <title></title>
     <!-- TODO: Add Meta Check for Page or Article, then load correct meta view. -->
+
+    @if(isset($article))
+        @include('core._meta.meta_article')
+    @endif
+
 </head>
 <body id="top">

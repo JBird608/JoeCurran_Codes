@@ -19,14 +19,7 @@ Route::get('/', function () {
 // Regestering Static Pages //
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
-
-Route::get('forward', function () {
-//    $model = "Hello";
-//    $test = url('blog', [$model]);
-//    dd($test);
-//    return $test;
-    //return Redirect::to('http://www.google.com');
-});
+Route::get('home', 'PagesController@home');
 
 // Regestering Blog Requests //
 //Route::get('blog', 'BlogController@index');
@@ -44,6 +37,19 @@ Route::get('forward', function () {
  */
 Route::resource('blog', 'BlogController');
 
+Route::get('user', function () {
+    return Auth::user();
+});
+
+
+// Authentication routes...
+Route::get('login', 'Auth\AuthController@getLogin');
+Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('register', 'Auth\AuthController@getRegister');
+Route::post('register', 'Auth\AuthController@postRegister');
 
 
 

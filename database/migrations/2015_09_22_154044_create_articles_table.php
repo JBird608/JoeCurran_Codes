@@ -13,26 +13,8 @@ class CreateArticlesTable extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
-
-            /**
-             * Table Values & Date to be Stored
-             *    Article ID         => id,
-             *    Article Type       => type,
-             *    Article Title      => title,
-             *    Article Cover      => cover,
-             *    Article Extract    => extract,
-             *    Article Body       => body,
-             *    Article Slug       => slug,
-             *    Article Author     => author,
-             *    Article Category   => category,
-             *    Article Tags       => tags,
-             *    Article Poll       => poll,
-             *    Article Location   => location,
-             *    Article Published  => published.
-             */
-
-
             $table->increments('id');
+            $table->string('page_code', 16);
             $table->integer('type')->default('1');
             $table->string('title');
             $table->string('cover')->nullable();

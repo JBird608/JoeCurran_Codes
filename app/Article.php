@@ -51,6 +51,16 @@ class Article extends Model
     }
 
     /**
+     * Function for selecting information for article listings.
+     *
+     * @param $query
+     */
+    public function scopeListing($query){
+        $query->select(['title', 'slug', 'extract', 'published']);
+    }
+
+
+    /**
      * Function for converting date from form into Carbon & Time,
      * before its saved in the database.
      *

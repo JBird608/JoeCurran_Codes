@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Auth;
 
 class PagesController extends Controller
 {
@@ -16,4 +17,14 @@ class PagesController extends Controller
     public function contact() {
         return view('core.standard');
     }
+
+
+    /**
+    * Function for Whoami
+    * Using
+    */
+    public function home(){
+        echo('Welcome ' . Auth::user()->name . '.');
+    }
+
 }

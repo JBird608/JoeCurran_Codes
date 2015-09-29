@@ -24,9 +24,14 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
+     * Sets the redirect route for a user once account has been created.
+     */
+    protected $redirectPath = 'blog';
+
+    protected $loginPath = 'login';
+
+    /**
      * Create a new authentication controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -56,10 +61,18 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        /**
+         * Take the validated data from the registation form and save it to the database.
+         * Then store this in $user to assign a user level and resave.
+         */
+        $user =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+        $user->level = 1;
+        $user->save();
+
+        return $user;
     }
 }
