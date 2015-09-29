@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c816ff46-2320-44e3-86ae-936664ee7a91" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2015_09_17_171409_create_articles_categories_table.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Article.php" afterPath="$PROJECT_DIR$/app/Article.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/core/article/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/core/article/show.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
     </list>
     <ignored path="joecurran_codes.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,26 +43,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="BlogController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BlogController.php">
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22362868">
-              <caret line="58" column="7" selection-start-line="58" selection-start-column="7" selection-end-line="58" selection-end-column="7" />
-              <folding>
-                <element signature="e#40#56#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2014_10_12_000000_create_users_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.25">
-              <caret line="27" column="22" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="22" />
-              <folding>
-                <element signature="e#7#48#0#PHP" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.09636651">
+              <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,14 +107,14 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/PagesController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/authenticate.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/register.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BlogController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2015_09_29_230130_create_article_categories_table.php" />
         <option value="$PROJECT_DIR$/app/Article.php" />
         <option value="$PROJECT_DIR$/resources/views/core/article/show.blade.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
       </list>
     </option>
   </component>
@@ -377,7 +359,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="create u&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2014_10_12_000000_create_users_table.php&#10;au&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/Auth/AuthController.php&#10;postlogin&#9;null&#9;null&#10;ro&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/routes.php&#10;route&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php&#10;getlogin&#9;null&#9;null&#10;routec&#9;null&#9;null&#10;log&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/storage/logs/laravel.log&#10;auth&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/Auth/AuthController.php&#10;guard&#9;null&#9;null&#10;article&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_17_171409_create_articles_categories_table.php&#10;create&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_21_111830_create_article_types_table.php&#10;authcon&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/Auth/AuthController.php&#10;rout&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/routes.php&#10;config/a&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/config/auth.php&#10;create_me&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_29_124613_create_metadata_table.php&#10;blogc&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/BlogController.php&#10;scss&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/assets/sass/core_eagle.scss&#10;final&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/public/build/css/final-029b724813.css&#10;sidebar/se&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_elements/sidebar/search.blade.php&#10;Article&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Requests/ArticleRequest.php&#10;blog&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/BlogController.php&#10;cli&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_elements/_quickclient.blade.php&#10;footer&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_elements/_footer.blade.php&#10;page&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/PagesController.php&#10;metadata&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_meta/metadata.blade.php&#10;doc&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_meta/doc_open.blade.php&#10;font&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/public/assets/fonts/font-awesome.css&#10;stand&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/articles/standard.blade.php&#10;create_ar&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_22_154044_create_articles_table.php&#10;create_a&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_22_154044_create_articles_table.php&#10;rou&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/routes.php&#10;createarticlestype&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_17_161602_create_articles_type_table.php&#10;Mig&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php&#10;routeco&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="rou&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/routes.php&#10;create u&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2014_10_12_000000_create_users_table.php&#10;au&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/Auth/AuthController.php&#10;postlogin&#9;null&#9;null&#10;ro&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/routes.php&#10;route&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/vendor/laravel/framework/src/Illuminate/Routing/RouteCollection.php&#10;getlogin&#9;null&#9;null&#10;routec&#9;null&#9;null&#10;log&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/storage/logs/laravel.log&#10;auth&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/Auth/AuthController.php&#10;guard&#9;null&#9;null&#10;article&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_17_171409_create_articles_categories_table.php&#10;create&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_21_111830_create_article_types_table.php&#10;authcon&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/Auth/AuthController.php&#10;rout&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/routes.php&#10;config/a&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/config/auth.php&#10;create_me&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_29_124613_create_metadata_table.php&#10;blogc&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/BlogController.php&#10;scss&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/assets/sass/core_eagle.scss&#10;final&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/public/build/css/final-029b724813.css&#10;sidebar/se&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_elements/sidebar/search.blade.php&#10;Article&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Requests/ArticleRequest.php&#10;blog&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/BlogController.php&#10;cli&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_elements/_quickclient.blade.php&#10;footer&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_elements/_footer.blade.php&#10;page&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/app/Http/Controllers/PagesController.php&#10;metadata&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_meta/metadata.blade.php&#10;doc&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/core/_meta/doc_open.blade.php&#10;font&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/public/assets/fonts/font-awesome.css&#10;stand&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/resources/views/articles/standard.blade.php&#10;create_ar&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_22_154044_create_articles_table.php&#10;create_a&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_22_154044_create_articles_table.php&#10;createarticlestype&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/database/migrations/2015_09_17_161602_create_articles_type_table.php&#10;Mig&#9;FILE&#9;file:///Users/JoeCurran/Documents/PUBLIC_HTML/sites/joecurran_codes/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php&#10;routeco&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Laravel" />
   </component>
   <component name="RecentsManager">
@@ -442,7 +424,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23211679" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23211679" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32681867" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3516949" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875606" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -568,6 +550,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5222552">
           <caret line="16" column="3" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -833,14 +816,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65560824">
-          <caret line="45" column="49" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.30182928">
@@ -854,16 +829,6 @@
         <state vertical-scroll-proportion="-7.3333335">
           <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.25">
-          <caret line="27" column="22" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="22" />
-          <folding>
-            <element signature="e#7#48#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,6 +879,24 @@
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36708862">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="22" />
+          <folding>
+            <element signature="e#7#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09636651">
+          <caret line="22" column="56" selection-start-line="22" selection-start-column="56" selection-end-line="22" selection-end-column="56" />
+          <folding />
         </state>
       </provider>
     </entry>
