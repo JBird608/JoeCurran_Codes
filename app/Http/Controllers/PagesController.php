@@ -11,11 +11,18 @@ use Auth;
 class PagesController extends Controller
 {
     public function about(){
-        return view('core.standard');
+        return view('core.pages.about');
     }
 
     public function contact() {
         return view('core.standard');
+    }
+    /**
+    * Function for Projects .
+    * Using
+    */
+    public function projects(){
+        return "Projects";
     }
 
 

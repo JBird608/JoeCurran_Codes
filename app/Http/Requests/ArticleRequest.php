@@ -3,7 +3,11 @@
 namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Support\Facades\Auth;
 
+/**
+ * @property mixed title
+ */
 class ArticleRequest extends Request
 {
     /**
@@ -13,7 +17,11 @@ class ArticleRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        if(Auth::check() && Auth::user()->level > 50){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -24,7 +32,11 @@ class ArticleRequest extends Request
     public function rules()
     {
         return [
-            //
+            'title'        => 'required|min:8|max:120',
+            'body'         => 'required',
+            'publish'      => 'required|date',
+            'category'     => 'required|exists:article_categories,id',
+            'slug'         => 'regex:/^[a-z0-9_ ]+$/i',
         ];
     }
 }

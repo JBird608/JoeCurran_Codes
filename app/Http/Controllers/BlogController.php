@@ -5,11 +5,14 @@ namespace App\Http\Controllers;
 use App\Article;
 
 use App\ArticleAuthor;
+use App\ArticleCategory;
 use App\ArticleType;
 use App\Http\Requests\ArticleRequest;
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Str;
 use Request;
 
 use App\Http\Requests;
@@ -31,7 +34,13 @@ class BlogController extends Controller
      * Function for update a blog article.
      */
     public function create(){
-        
+        if (Auth::check() && Auth::user()->level > 50) {
+            $catergories = ArticleCategory::select('id', 'name')->get()->pluck('id', 'name')->flip();
+
+            return view('core.article.create', compact('catergories'));
+        } else {
+            return Redirect::to('login');
+        }
     }
 
     /**
@@ -40,8 +49,22 @@ class BlogController extends Controller
      * @param $id
      * @param ArticleRequest $request
      */
-    public function store($id, ArticleRequest $request){
-        
+    public function store(ArticleRequest $request){
+
+        if($request->has('slug')) {
+            $request['slug'] = str_slug($request['slug'], "_");
+        } else {
+            $request['slug'] = str_slug($request['title'], "_");
+        }
+
+        $article = Article::create($request->all());
+        $article['page_code'] = str_random(16);
+        $article['author'] = Auth::user()->id;
+        $article['category'] = $request['category']; // TODO:: Preform a check to see if this Category Exists //
+        $article['published'] = Carbon::parse($request['published']); // TODO:: Add a time to publish field //
+        $article->save();
+
+        return redirect('blog/' . $request->slug);
     }
 
     /**
@@ -82,24 +105,20 @@ class BlogController extends Controller
     public function destroy($id){
         
     }
+
+    /**
+     * Random String Gen
+     */
+    function generateRandomString($length) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
     
-    
-//    public function article($slug){
-//        // GET THE ARTICLE BASED ON THE SLUG PROVIDED //
-//        $article = Article::where('slug', $slug)->firstOrFail();
-//
-//        $author = ArticleAuthor::where('id', $article->author)->select('name')->firstOrFail();
-//        $author = $author->name;
-//
-//        $published = $article->published->format('m F Y');
-//
-//        // GET THE ARTICLE TYPE //
-//        $type = ArticleType::where('id', $article->type)->firstOrFail();
-//
-//        // RETURN THE VIEW WITH THE CORRECT TYPE //
-//
-//    }
-//
 //    public function create(){
 //
 //        return view('articles.create');

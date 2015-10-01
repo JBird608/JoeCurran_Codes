@@ -64,7 +64,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 h1 {
-
+  font-size: 3rem;
 }
 h2 {
 
@@ -129,8 +129,78 @@ a {
   }
 }
 
-#core_header_navigation {
+#core_navigation {
+  margin-bottom: 1.6rem;
+  z-index: -2;
+  border-bottom: 1px solid $shady-white;
 
+  ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      border: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+
+      li {
+        flex: 1;
+        padding: 1.1rem 0;
+        border-bottom: 4px solid transparent;
+
+        &:hover {
+            border-bottom: 4px solid $purple;
+        }
+      }
+    }
+  }
+
+  .ribbon {
+    background-color: $purple;
+    color: $white;
+    font-size: 1.5rem;
+    flex: 2;
+    padding: 1rem 0 0;
+    position: relative;
+    z-index: 1;
+    border-bottom: 5px solid $purple;
+    border-top: 5px dotted $white;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      bottom: -1rem;
+      left: 0;
+      background-color: $purple;
+      z-index: -1;
+      -webkit-transform: skew(0deg, 3deg);
+      -moz-transform:    skew(0deg, 3deg);
+      -o-transform:      skew(0deg, 3deg);
+    }
+
+    a {
+      color: white;
+      border-bottom: none;
+    }
+  }
 }
 
 #core_content {
@@ -578,6 +648,16 @@ a {
 .italics {
   font-style: italic;
   font-family: $CoreThinItalic;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.bg-light-blue {
+  margin: 1rem 0;
+  padding: 1rem 2.5rem;
+  background-color: #2ED5FA;
 }
 
 // Core Eagle Font Awesome //
