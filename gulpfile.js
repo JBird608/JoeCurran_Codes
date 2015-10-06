@@ -30,7 +30,6 @@ elixir(function(mix) {
         'foundation/css/foundation.css',
         'app.css'
     ], 'public/css/final.css', 'public/assets');
-
     /**
      * Create cache version of the css file for production.
      * This allows for broswer cache and updates.

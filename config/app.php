@@ -138,6 +138,9 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
 
+        MaxHoffmann\Parsedown\ParsedownServiceProvider::class,
+        Thujohn\Twitter\TwitterServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -196,7 +199,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'HTML'      => Illuminate\Html\HtmlFacade::class,
         'Form'      => Illuminate\Html\FormFacade::class,
-
+        'Markdown'  => MaxHoffmann\Parsedown\ParsedownFacade::class,
+        'Twitter'   => Thujohn\Twitter\Facades\Twitter::class,
     ],
 
 ];

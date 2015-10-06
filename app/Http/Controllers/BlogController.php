@@ -25,8 +25,7 @@ class BlogController extends Controller
      */
     public function index(){
         // Get latest published articles, sorted by date & select only given fields.
-        $articles = Article::latest('published')->published()->listing()->get();
-
+        $articles = Article::latest('published')->published()->listing()->limit(10)->get();
         return view('core.article.index', compact('articles'));
     }
 

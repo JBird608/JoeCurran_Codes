@@ -7,7 +7,7 @@
     <!-- // STYLESHEETS // -->
     <link rel="stylesheet" href=" {{ elixir('css/final.css') }}" />
     <!-- TODO: Add metadate output for extra stylesheets if any. -->
-
+    @yield('extra_stylesheets')
     <!-- // META TAGS // -->
     <title></title>
     <!-- TODO: Add Meta Check for Page or Article, then load correct meta view. -->

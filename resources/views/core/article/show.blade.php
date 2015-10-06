@@ -1,5 +1,9 @@
 @extends('core.standard')
 
+@section('extra_stylesheets')
+    <link href=" {{ asset('assests/code/prism.css') }}" rel="stylesheet"/>
+@stop
+
 @section('cover')
     <div class="row article_pre">
         <div id="cover">
@@ -20,11 +24,15 @@
             <li><a href="#" title="More Random Articles"><i class="fa fa-archive"></i>{{ $article->category }}</a></li>
         </ul>
 
-        {!! $article->body !!}
+        {!! Markdown::parse($article->body) !!}
 
     </article>
 @stop
 
 @section('sidebar')
 
+@stop
+
+@section('js')
+    <script src=" {{ asset('assests/code/prism.js') }}"></script>
 @stop

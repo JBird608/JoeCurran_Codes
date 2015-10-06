@@ -165,7 +165,7 @@ a {
         border-bottom: 4px solid transparent;
 
         &:hover {
-            border-bottom: 4px solid $purple;
+          border-bottom: 4px solid $purple;
         }
       }
     }
@@ -527,7 +527,7 @@ a {
         }
       }
     }
-  // TODO: Find a better solution to these background images without using full manual URLs //
+    // TODO: Find a better solution to these background images without using full manual URLs //
     .social-twitter {
       background: url('http://joecurrancodes.dev/img/social-twitter.svg') no-repeat center 0px;
       background-size: 2.5rem;
@@ -609,26 +609,26 @@ a {
     }
   }
 } #core_end {
-  font-family: $CoreRegular;
-  background-color: $shadows;
-  width: 100%;
-  text-align: center;
-  color: $shady-white;
-  font-size: 0.7rem;
+    font-family: $CoreRegular;
+    background-color: $shadows;
+    width: 100%;
+    text-align: center;
+    color: $shady-white;
+    font-size: 0.7rem;
 
-  a {
-    text-transform: capitalize;
-    border-bottom: 1px dashed $shady-white;
-    color: inherit;
-    @include transition(color .5s ease);
+    a {
+      text-transform: capitalize;
+      border-bottom: 1px dashed $shady-white;
+      color: inherit;
+      @include transition(color .5s ease);
 
-    &:hover {
-      border-bottom: none;
-      color: $purple;
+      &:hover {
+        border-bottom: none;
+        color: $purple;
+      }
     }
-  }
 
-}
+  }
 // Core Eagle .classes //
 
 .bg-highlight {
@@ -668,4 +668,4 @@ a {
 // Hope you enjoyed inspecting my code, :D //
 // See you again sometime? //
 
-// END // 
+// END //

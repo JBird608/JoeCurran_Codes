@@ -36,6 +36,12 @@ Route::get('user', function () {
     return Auth::user();
 });
 
+Route::get('function', function () {
+    return Markdown::parse('**Hello** Markdown! *How are you doing?*');
+// returns '<p><strong>Hello</strong> Markdown!<
+});
+
+
 
 
 
