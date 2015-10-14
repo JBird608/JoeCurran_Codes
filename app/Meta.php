@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Metadata extends Model
+class Meta extends Model
 {
 
     /**
@@ -14,10 +14,10 @@ class Metadata extends Model
      * @var array
      */
     protected $fillable = [
-        'page_code',
-        'page_title',
-        'page_discription',
-        'page_image',
+        'code',
+        'title',
+        'discription',
+        'image',
         'twitter_card',
         'twitter_creater',
         'small_url',

@@ -26,3 +26,4 @@
 <meta property="fb:admins" content="Facebook numberic ID" />
 
 <!-- TODO: Add Pintrest Meta Data -->
+<!--TODO:: Add Icons Support -->

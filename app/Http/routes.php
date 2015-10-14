@@ -1,19 +1,16 @@
 <?php
 
 /**
- * Requesting the Homepage.
- */
-    Route::get('/', function () {
-        return view('core.standard');
-    });
-
-/**
  * Static or General Page Requests.
  */
+Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
+Route::post('contact', 'PagesController@contactPost');
 Route::get('projects', 'PagesController@projects');
-Route::get('home', 'PagesController@home');
+Route::get('dashboard', 'PagesController@dashboard');
+
+
 
 /**
  * Blog or Article Requests.
@@ -32,12 +29,17 @@ Route::post('register', 'Auth\AuthController@postRegister');
 /**
  * Testing & Temporary Requests
  */
-Route::get('user', function () {
+Route::get('user', function() {
     return Auth::user();
 });
 
-Route::get('function', function () {
-    return Markdown::parse('**Hello** Markdown! *How are you doing?*');
+Route::get('function', function() {
+
+    $tweets = Twitter::getUserTimeline(['screen_name' => 'jbird608', 'count' => 1, 'format' => 'json']);
+    return $tweets;
+    //return Twitter::getHomeTimeline(['count' => 20, 'format' => 'json']);
+    //return Twitter::postTweet(['status' => 'Laravel is beautiful', 'format' => 'json']);
+    //return Markdown::parse('**Hello** Markdown! *How are you doing?*');
 // returns '<p><strong>Hello</strong> Markdown!<
 });
 

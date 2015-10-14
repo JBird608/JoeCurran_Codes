@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePagesMetadataTable extends Migration
+class CreateMetasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreatePagesMetadataTable extends Migration
      */
     public function up()
     {
-        Schema::create('pages_metadata', function (Blueprint $table) {
+        Schema::create('metas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('page_code', 16)->unique();
-            $table->string('page_title');
-            $table->string('page_discription');
-            $table->string('page_image');
+            $table->string('code', 16)->unique();
+            $table->string('title');
+            $table->string('discription');
+            $table->string('image');
             $table->string('twitter_card');
             $table->string('twitter_creater');
             $table->string('small_url')->nullable();
@@ -33,6 +33,6 @@ class CreatePagesMetadataTable extends Migration
      */
     public function down()
     {
-        Schema::drop('pages_metadata');
+        Schema::drop('metas');
     }
 }

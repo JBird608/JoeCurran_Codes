@@ -37,6 +37,8 @@ class ArticleRequest extends Request
             'publish'      => 'required|date',
             'category'     => 'required|exists:article_categories,id',
             'slug'         => 'regex:/^[a-z0-9_ ]+$/i',
+            'listing-image'=> 'required|mimes:png,jpg,jpeg',
+            'cover-image'  => 'required|mimes:png,jpg,jpeg',
         ];
     }
 }

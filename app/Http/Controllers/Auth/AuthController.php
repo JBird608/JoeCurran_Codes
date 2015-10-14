@@ -26,7 +26,7 @@ class AuthController extends Controller
     /**
      * Sets the redirect route for a user once account has been created.
      */
-    protected $redirectPath = 'blog';
+    protected $redirectPath = 'dashboard';
 
     protected $loginPath = 'login';
 

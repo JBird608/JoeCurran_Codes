@@ -8,10 +8,12 @@ use App\ArticleAuthor;
 use App\ArticleCategory;
 use App\ArticleType;
 use App\Http\Requests\ArticleRequest;
+use App\Meta;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 use Request;
 
@@ -23,20 +25,26 @@ class BlogController extends Controller
     /**
      * Function for the blog homepage, displaing all published posts.
      */
-    public function index(){
+    public function index() {
+        $pagecode = '2vq4KHidVogKpgZe';
+        $meta = Meta::where('code', $pagecode)->firstOrFail();
         // Get latest published articles, sorted by date & select only given fields.
         $articles = Article::latest('published')->published()->listing()->limit(10)->get();
-        return view('core.article.index', compact('articles'));
+       // dd($meta);
+        return view('core.article.index', compact('articles', 'meta'));
     }
 
     /**
      * Function for update a blog article.
      */
-    public function create(){
+    public function create() {
+        $pagecode = '2vq4KHidVogKpgZ8';
+        $meta = Meta::where('code', $pagecode)->firstOrFail();
+
         if (Auth::check() && Auth::user()->level > 50) {
             $catergories = ArticleCategory::select('id', 'name')->get()->pluck('id', 'name')->flip();
 
-            return view('core.article.create', compact('catergories'));
+            return view('core.article.create', compact('catergories', 'meta'));
         } else {
             return Redirect::to('login');
         }
@@ -48,20 +56,29 @@ class BlogController extends Controller
      * @param $id
      * @param ArticleRequest $request
      */
-    public function store(ArticleRequest $request){
+    public function store(ArticleRequest $request) {
 
-        if($request->has('slug')) {
+        if ($request->has('slug')) {
             $request['slug'] = str_slug($request['slug'], "_");
         } else {
             $request['slug'] = str_slug($request['title'], "_");
         }
+        $today = Carbon::today()->format('Y') . '/' . Carbon::today()->format('M') . '/' . Carbon::today()->format('d');
+        $uploadPath =  base_path() . '/public/img/uploads/' . $today;
 
         $article = Article::create($request->all());
+        $SmallImageName = '/img/uploads/' . $today . '/' . $request['slug'] . '_sml' . '.' . $request->file('listing-image')->getClientOriginalExtension();
+        $coverImageName = '/img/uploads/' . $today . '/' . $request['slug'] . '_cover' . '.' . $request->file('cover-image')->getClientOriginalExtension();
+        $article['imgfull'] = $coverImageName;
+        $article['imgsml'] = $SmallImageName;
         $article['page_code'] = str_random(16);
         $article['author'] = Auth::user()->id;
         $article['category'] = $request['category']; // TODO:: Preform a check to see if this Category Exists //
         $article['published'] = Carbon::parse($request['published']); // TODO:: Add a time to publish field //
         $article->save();
+
+        $request->file('listing-image')->move($uploadPath, $SmallImageName);
+        $request->file('cover-image')->move($uploadPath, $coverImageName);
 
         return redirect('blog/' . $request->slug);
     }
@@ -73,7 +90,7 @@ class BlogController extends Controller
      * @return \Illuminate\View\View
      * @internal param $id
      */
-    public function show($slug){
+    public function show($slug) {
         $article = Article::where('slug', $slug)->firstOrFail();
         return view('core.article.' . $article->type, compact('article'));
     }
@@ -83,8 +100,8 @@ class BlogController extends Controller
      *
      * @param $id
      */
-    public function edit($id){
-        
+    public function edit($id) {
+
     }
 
     /**
@@ -92,8 +109,8 @@ class BlogController extends Controller
      *
      * @param $id
      */
-    public function update($id){
-        
+    public function update($id) {
+
     }
 
     /**
@@ -101,70 +118,7 @@ class BlogController extends Controller
      *
      * @param $id
      */
-    public function destroy($id){
-        
-    }
+    public function destroy($id) {
 
-    /**
-     * Random String Gen
-     */
-    function generateRandomString($length) {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
     }
-    
-//    public function create(){
-//
-//        return view('articles.create');
-//    }
-//
-//    /**
-//     * @param ArticleRequest $request
-//     * @return Redirect
-//     */
-//    public function store(ArticleRequest $request){
-//
-//        /**
-//         * Table Values & Date to be Stored
-//         *    Article ID         => id,
-//         *    Article Type       => type,
-//         *    Article Title      => title,
-//         *    Article Cover      => cover,
-//         *    Article Extract    => extract,
-//         *    Article Body       => body,
-//         *    Article Slug       => slug,
-//         *    Article Author     => author,
-//         *    Article Category   => category,
-//         *    Article Tags       => tags,
-//         *    Article Poll       => poll,
-//         *    Article Location   => location,
-//         *    Article Published  => published.
-//         */
-//
-//        $article = new Article;
-//        $article->type = $request->type; // $request->type();
-//        $article->title = $request->title;
-//        $article->cover = $request->cover;
-//        $article->extract = $request->extract;
-//        $article->body = $request->body;
-//        $article->slug = $request->slug;
-//        $article->author = 1; // Get auth user id.
-//        $article->tags = $request->tags;
-//        $article->poll_id = null;
-//        $article->location_id = null;
-//        $article->published = Carbon::now();
-//        $article->category = 1;
-//
-//        $article->save();
-//
-//        return redirect('blog');
-//    }
-//    public function redirect(){
-//        return Redirect::action('BlogController@index');
-//    }
 }

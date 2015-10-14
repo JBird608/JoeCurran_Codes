@@ -1,8 +1,10 @@
-    	<!-- // JAVASCRIPT FILES GO HERE //
-		<script src="foundation/js/vendor/jquery.js"></script>
-		<script src="foundation/js/foundation.min.js"></script>
+    	<!-- // JAVASCRIPT FILES GO HERE // -->
+		<script src="{{ asset('assets/foundation/js/vendor/modernizr.js') }}"></script>
+		<script src="{{ asset('assets/foundation/js/vendor/jquery.js') }}"></script>
+		<script src="{{ asset('assets/foundation/js/foundation.min.js') }}"></script>
+        @yield('js')
 		<script>
 			$(document).foundation();
-    	</script> -->
+    	</script>
 	</body>
 </html>

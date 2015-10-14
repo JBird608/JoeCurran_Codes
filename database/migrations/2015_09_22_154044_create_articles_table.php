@@ -17,7 +17,8 @@ class CreateArticlesTable extends Migration
             $table->string('page_code', 16);
             $table->integer('type')->default('1');
             $table->string('title');
-            $table->string('cover')->nullable();
+            $table->string('imgfull');
+            $table->string('imgsml');
             $table->text('extract')->nullable();
             $table->text('body');
             // META DATA //

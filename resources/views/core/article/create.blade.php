@@ -9,7 +9,7 @@
 @stop
 
 @section('body')
-    {!! Form::open(['action' => 'BlogController@store']) !!}
+    {!! Form::open(array('action' => 'BlogController@store', 'files' => true)) !!}
 
         <fieldset>
         <legend>Article Body</legend>
@@ -48,6 +48,15 @@
                 <!-- Category Dropdown Form Input -->
                 {!! Form::label('category', 'Category:') !!}
                 {!! Form::select('category', $catergories, null, ['placeholder' => '']) !!}
+
+                <!-- File Upload For  -->
+                {!! Form::label('cover-image', 'Cover Image:') !!}
+                {!! Form::file('cover-image') !!}
+                <p>Image need to be size: 1000 by 300 px.</p>
+
+                {!! Form::label('listing-image', 'Listing Image:') !!}
+                {!! Form::file('listing-image') !!}
+                <p>Image need to be size: 300 by 160 px.</p>
                 
                 <!-- Tags Form Input -->
                 {!! Form::label('tags', 'Tags:') !!}
@@ -55,4 +64,29 @@
         </div>
     </div>
     {!! Form::close() !!}
+@stop
+
+@section('js')
+    <script>
+        $("textarea").keydown(function(e) {
+            if(e.keyCode === 9) { // tab was pressed
+                // get caret position/selection
+                var start = this.selectionStart;
+                end = this.selectionEnd;
+
+                var $this = $(this);
+
+                // set textarea value to: text before caret + tab + text after caret
+                $this.val($this.val().substring(0, start)
+                        + "\t"
+                        + $this.val().substring(end));
+
+                // put caret at right position again
+                this.selectionStart = this.selectionEnd = start + 1;
+
+                // prevent the focus lose
+                return false;
+            }
+        });
+    </script>
 @stop
