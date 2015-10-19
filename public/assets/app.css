@@ -42,6 +42,28 @@ a {
     color: #ffcc03;
     border-bottom: none; }
 
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+  font-family: "CoreRegular", sans-serif;
+  border-radius: 0.5rem; }
+
+input[type="textarea"] {
+  resize: none; }
+
+textarea {
+  resize: none; }
+
+input[type="submit"] {
+  padding: 1rem;
+  font-family: "CoreBold", sans-serif;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white; }
+  input[type="submit"]:hover {
+    color: #ffcc03;
+    border-color: #ffcc03; }
+
 #index #index_background {
   padding: 2rem 0 4rem 0;
   /* Chrome 10+, Saf5.1+ */
@@ -342,6 +364,22 @@ a {
       display: block; }
     #core_content article .right {
       text-align: right; }
+  #core_content #core_contact {
+    margin: 2rem 0;
+    padding: 0; }
+    #core_content #core_contact h2 {
+      color: white; }
+    #core_content #core_contact .form {
+      padding: 2rem 1rem 1rem;
+      border: 1px solid lightgray;
+      /* Chrome 10+, Saf5.1+ */
+      /* FF3.6+ */
+      /* IE10 */
+      /* Opera 11.10+ */
+      background: linear-gradient(135deg, #673AB7 10%, #3b217a 60%);
+      /* W3C */ }
+      #core_content #core_contact .form label {
+        color: white; }
 
 #core_footer {
   margin: 1rem 0;

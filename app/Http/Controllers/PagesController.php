@@ -35,7 +35,7 @@ class PagesController extends Controller
     public function contact() {
         $pagecode = 'skzae4YRmyDGX4JR';
         $meta = Meta::where('code', $pagecode)->firstOrFail();
-        return view('core.standard', compact('meta'));
+        return view('core.pages.contact', compact('meta'));
     }
 
     /**

@@ -10,8 +10,6 @@ Route::post('contact', 'PagesController@contactPost');
 Route::get('projects', 'PagesController@projects');
 Route::get('dashboard', 'PagesController@dashboard');
 
-
-
 /**
  * Blog or Article Requests.
  */
@@ -40,7 +38,7 @@ Route::get('function', function() {
     //return Twitter::getHomeTimeline(['count' => 20, 'format' => 'json']);
     //return Twitter::postTweet(['status' => 'Laravel is beautiful', 'format' => 'json']);
     //return Markdown::parse('**Hello** Markdown! *How are you doing?*');
-// returns '<p><strong>Hello</strong> Markdown!<
+    // returns '<p><strong>Hello</strong> Markdown!<
 });
 
 

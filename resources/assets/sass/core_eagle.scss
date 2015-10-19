@@ -111,6 +111,30 @@ a {
 
   }
 }
+input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+  font-family: $CoreRegular;
+  border-radius: 0.5rem;
+}
+input[type="textarea"] {
+  resize: none;
+}
+textarea {
+  resize: none;
+}
+input[type="submit"] {
+  padding: 1rem;
+  font-family: $CoreBold;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+
+  &:hover {
+    color: #ffcc03;
+    border-color: #ffcc03;
+  }
+}
 
 // Core Eagle #IDs //
 #index {
@@ -387,6 +411,7 @@ a {
 #core_content {
   margin: 1rem auto;
 
+  // ARTICLES RELATED //
   .article_head {
     margin: 0 0 1.5rem 0;
 
@@ -431,7 +456,6 @@ a {
       }
     }
   }
-
   article {
     background-color: white;
     border: 1px solid lightgray;
@@ -515,6 +539,30 @@ a {
     }
   }
 
+  // CONTACT PAGE //
+  #core_contact {
+    margin: 2rem 0;
+    padding: 0;
+
+    h2 {
+      color: white;
+    }
+
+    .form {
+      padding: 2rem 1rem 1rem;
+      border: 1px solid lightgray;
+
+      background: -webkit-linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* Chrome 10+, Saf5.1+ */
+      background: -moz-linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* FF3.6+ */
+      background: -ms-linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* IE10 */
+      background: -o-linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* Opera 11.10+ */
+      background: linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* W3C */
+
+      label {
+        color: white;
+      }
+    }
+  }
 }
 
 #core_footer {
