@@ -4,10 +4,11 @@
     <div id="core_contact">
         <div class="row">
             <div class="small-12 medium-6 columns">
-                <h1>Get Intouch...</h1>
-                <p>See something you like?</p>
-                <p>Triggered a Question?</p>
-                <p>Drop me a message and I'll get back to you!</p>
+                <div id="core_contact_head" class="border-bottom">
+                    <h1>Get in Touch</h1>
+                    <p>Want to know more about my services or projects?</p>
+                    <p class="text-uppercase">Get in contact</p>
+                </div>
             </div>
             <div class="small-12 medium-6 columns form">
                 <h2>Send it by E-Mail:</h2>

@@ -6,19 +6,14 @@ use App\Article;
 
 use App\ArticleAuthor;
 use App\ArticleCategory;
-use App\ArticleType;
 use App\Http\Requests\ArticleRequest;
 use App\Meta;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\URL;
-use Illuminate\Support\Str;
 use Request;
-
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
@@ -29,8 +24,7 @@ class BlogController extends Controller
         $pagecode = '2vq4KHidVogKpgZe';
         $meta = Meta::where('code', $pagecode)->firstOrFail();
         // Get latest published articles, sorted by date & select only given fields.
-        $articles = Article::latest('published')->published()->listing()->limit(10)->get();
-       // dd($meta);
+        $articles = Article::latest('published')->published()->listing()->paginate(4);
         return view('core.article.index', compact('articles', 'meta'));
     }
 
@@ -53,8 +47,9 @@ class BlogController extends Controller
     /**
      * Function for storing a new blog article.
      *
-     * @param $id
+     * @param $request
      * @param ArticleRequest $request
+     * @return Redirect
      */
     public function store(ArticleRequest $request) {
 
@@ -98,19 +93,28 @@ class BlogController extends Controller
     /**
      * Function for editing an blog article.
      *
-     * @param $id
+     * @param $slug
+     * @return \Illuminate\View\View
      */
-    public function edit($id) {
-
+    public function edit($slug) {
+        $article = Article::where('slug', $slug)->firstOrFail();
+        $catergories = ArticleCategory::select('id', 'name')->get()->pluck('id', 'name')->flip();
+        return view('core.article.edit', compact('article', 'catergories'));
     }
 
     /**
      * Function for updating an blog article.
      *
-     * @param $id
+     * @param $slug
+     * @param ArticleRequest $request
+     * @internal param $slug
+     * @return Redirect
      */
-    public function update($id) {
+    public function update($slug, ArticleRequest $request) {
+        $article = Article::where('slug', $slug)->firstOrFail();
+        $article->update($request->all());
 
+        return redirect(action('BlogController@show', $slug));
     }
 
     /**

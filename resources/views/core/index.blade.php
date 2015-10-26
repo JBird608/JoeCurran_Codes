@@ -38,7 +38,7 @@
         <div class="row border-bottom">
 
             @foreach($articles as $article)
-                <div class="medium-4 small-12 columns post">
+                <div class="large-4 medium-12 columns post">
                     <a href="{{ action('BlogController@show', [$article->slug]) }}">
                     <article>
                         <div class="date">

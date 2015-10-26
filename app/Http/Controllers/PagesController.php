@@ -29,7 +29,10 @@ class PagesController extends Controller
     }
 
     public function about(){
-        return view('core.pages.about');
+        $pagecode = 'skzae4YRmyDGX4JR';
+        $meta = Meta::where('code', $pagecode)->firstOrFail();
+
+        return view('core.pages.about', compact('meta'));
     }
 
     public function contact() {
@@ -58,7 +61,9 @@ class PagesController extends Controller
     * Using
     */
     public function projects(){
-        return "Projects";
+        $pagecode = 'skzae4YRmyDGX4JR';
+        $meta = Meta::where('code', $pagecode)->firstOrFail();
+        return view('core.pages.folio', compact('meta'));
     }
 
     /**

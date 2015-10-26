@@ -1,4 +1,5 @@
 @extends('core.standard')
+
 @section('cover')
     <h1>Add a new Article</h1>
 
@@ -6,7 +7,8 @@
 @stop
 
 @section('body')
-    {!! Form::open(array('action' => 'BlogController@store', 'files' => true)) !!}
+    {!! Form::model($article, ['method' => 'PATCH', 'action' => ['BlogController@update', $article->slug], 'files' => true]) !!}
+
     @include('core.article._form.main')
 @stop
 

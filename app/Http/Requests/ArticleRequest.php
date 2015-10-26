@@ -31,14 +31,16 @@ class ArticleRequest extends Request
      */
     public function rules()
     {
+
+        // TODO:: Add a condition in for the update //
         return [
             'title'        => 'required|min:8|max:120',
             'body'         => 'required',
             'publish'      => 'required|date',
             'category'     => 'required|exists:article_categories,id',
             'slug'         => 'regex:/^[a-z0-9_ ]+$/i',
-            'listing-image'=> 'required|mimes:png,jpg,jpeg',
-            'cover-image'  => 'required|mimes:png,jpg,jpeg',
+            'listing-image'=> 'mimes:png,jpg,jpeg',
+            'cover-image'  => 'mimes:png,jpg,jpeg',
         ];
     }
 }

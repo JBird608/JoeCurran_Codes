@@ -56,7 +56,7 @@ class Article extends Model
      * @param $query
      */
     public function scopeListing($query){
-        $query->select(['title', 'slug', 'extract', 'published', 'imgsml']);
+        $query->select(['title', 'slug', 'extract', 'published', 'category', 'author', 'imgsml']);
     }
 
     /**

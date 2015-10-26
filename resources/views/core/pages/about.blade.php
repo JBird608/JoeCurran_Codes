@@ -1,19 +1,9 @@
-@extends('core.standard')
-
-@section('cover')
-    <div class="bg-light-blue">
-        <h1>Who am I?</h1>
-        <p class="no-margin">Well, let me give you a little insite...</p>
-    </div>
-
-@endsection
+@extends('core.full')
 
 @section('body')
-Body Goes Here!
-@endsection
+    <div id="core_blog_cover" class="border-bottom">
+        <h1>Who am I?</h1>
 
-@section('sidebar')
-Side Bar
-@endsection
-
+        <p>I'm Joe Curran. A 21 year old web designer and developer who recently graduated from the <a href="http://www.uclan.ac.uk/">University of Central Lancashire</a> with a <strong>first class degree</strong> in 'Web Design & Development'.</p>
+    </div>
 @stop
