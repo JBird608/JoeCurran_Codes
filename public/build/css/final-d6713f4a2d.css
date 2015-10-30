@@ -3834,12 +3834,37 @@ input[type="submit"] {
   font-family: "CoreBold", sans-serif;
   font-size: 1rem;
   color: white;
-  background-color: #62448c;
+  background-color: #3b217a;
   border: none;
   cursor: pointer;
   transition: background-color 0.5s ease; }
   input[type="submit"]:hover {
-    background-color: #4b2777; }
+    background-color: #281652; }
+
+/**
+  FORM ERRORS
+ */
+label.error input, .error textarea {
+  border: 1px solid #ef4f4f; }
+
+span.error, small.error {
+  background: #ef4f4f;
+  font-style: normal;
+  font-family: "CoreRegular", sans-serif; }
+
+div.error {
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  background-color: #fcdfdf;
+  color: #ef4f4f;
+  border: 1px solid #ef4f4f; }
+
+div.success {
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+  background-color: #cab9e9;
+  color: #673AB7;
+  border: 1px solid #673AB7; }
 
 #index #index_background {
   margin-top: 0;
@@ -4201,7 +4226,7 @@ input[type="submit"] {
 
 #core_footer_before {
   padding: 2rem 0;
-  background-color: #4b2777;
+  background-color: #3b217a;
   color: white;
   font-family: "CoreThin", sans-serif; }
   #core_footer_before h3 {

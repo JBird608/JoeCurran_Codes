@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\ContactMe;
+use App\Correspondence;
 use App\Http\Requests;
 use App\Http\Requests\ContactEmail;
+use App\Http\Requests\CorrespondenceRequest;
 use App\Meta;
 use Auth;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 use Twitter;
 
 class PagesController extends Controller
@@ -45,15 +49,37 @@ class PagesController extends Controller
      * Function for Contact Form Submit.
      * Triggered when the user submits the e-mail form.
      *
-     * @param ContactEmail $request
+     * @param ContactEmail|CorrespondenceRequest $request
+     * @param $errors
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function contactPost(ContactEmail $request){
+    public function contactPost(CorrespondenceRequest $request){
 
-        /** TODO :: Add the processing for email and validation also add form.  */
+        // SAVE MESSAGE IN DATABASE //
+        Correspondence::create($request->all());
+        $request['created_at'] = Carbon::now()->format('dS F Y @ g:iA');
 
-        $msg = true;
-        return redirect('contact', compact('msg'));
+        // SEND EMAIL TO USER //
+        Mail::send('emails.thanks', ['request' => $request->all()], function ($m) use ($request) {
+            $m->from('no-reply@joecurran.codes', 'Joe Curran Codes');
+            $m->to($request['email']);
+            $m->replyTo('hello@joecurran.codes', 'Joe Curran');
+            $m->subject("Thanks for your message!");
+        });
+
+        // SEND EMAIL TO ME //
+        Mail::send('emails.incoming', ['request' => $request->all()], function ($m) use ($request){
+            $m->from('no-reply@joecurran.codes', 'Joe Curran Codes');
+            $m->to('hello@joecurran.codes');
+            $m->replyTo($request['email'], $request['name']);
+            $m->subject($request['subject']);
+        });
+        /**
+         *
+         * Add the check box
+         */
+
+        return Redirect::to('contact')->with('success', 'true');
     }
 
     /**

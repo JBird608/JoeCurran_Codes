@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
+
 Route::group(['domain' => 'joecurrancodes.dev'], function () {
     Route::get('/', function () {
         return view('core.splash');
@@ -44,9 +46,11 @@ Route::group(['domain' => 'dev.joecurrancodes.dev'], function () {
     });
 
     Route::get('function', function () {
+        // VIEW , Array, Closuse
 
-        $tweets = Twitter::getUserTimeline(['screen_name' => 'jbird608', 'count' => 1, 'format' => 'json']);
-        return $tweets;
+
+//        $tweets = Twitter::getUserTimeline(['screen_name' => 'jbird608', 'count' => 1, 'format' => 'json']);
+//        return $tweets;
         //return Twitter::getHomeTimeline(['count' => 20, 'format' => 'json']);
         //return Twitter::postTweet(['status' => 'Laravel is beautiful', 'format' => 'json']);
         //return Markdown::parse('**Hello** Markdown! *How are you doing?*');
