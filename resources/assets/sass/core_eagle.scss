@@ -111,8 +111,9 @@ a {
   }
 }
 input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
-  font-family: $CoreRegular;
-  border-radius: 0.5rem;
+  font-family: $CoreThin;
+  font-size: 1.2rem;
+  padding: 1.5rem 1rem;
 }
 input[type="textarea"] {
   resize: none;
@@ -124,14 +125,14 @@ input[type="submit"] {
   padding: 1rem;
   font-family: $CoreBold;
   font-size: 1rem;
-  border-radius: 0.5rem;
   color: white;
-  background-color: transparent;
-  border: 1px solid white;
+  background-color: $purple;
+  border: none;
+  cursor: pointer;
+  @include transition(background-color .5s ease);
 
   &:hover {
-    color: #ffcc03;
-    border-color: #ffcc03;
+    background-color: $deep_purple;
   }
 }
 
@@ -603,7 +604,7 @@ input[type="submit"] {
 
   // CONTACT PAGE //
   #core_contact {
-    margin: 2rem 0;
+    margin: 2rem 0 0;
     padding: 0;
 
     h2 {
@@ -611,38 +612,41 @@ input[type="submit"] {
     }
     #core_contact_head {
       h1 {
-        text-align: center;
         color: #333333;
-        text-transform: uppercase;
+        text-transform: capitalize;
       }
       p {
         margin: 0 auto 1rem;
-        text-align: center;
       }
 
     }
     .form {
       padding: 2rem 1rem 1rem;
-      border: 1px solid lightgray;
-
-      //background: -webkit-linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* Chrome 10+, Saf5.1+ */
-      //background: -moz-linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* FF3.6+ */
-      //background: -ms-linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* IE10 */
-      //background: -o-linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* Opera 11.10+ */
-      //background: linear-gradient(135deg, #673AB7 10%, #3b217a 60%); /* W3C */
-      background-image: url('../../img/bg.png');
-      background-position: right;
-      background-size: auto;
-      background-repeat: no-repeat;
-      border-radius: 1rem;
 
       label {
-        color: white;
+        color: gray;
       }
     }
   }
 }
+#core_footer_before {
+  padding: 2rem 0;
+  background-color: $deep_purple;
+  color: white;
+  font-family: $CoreThin;
 
+  h3 {
+    color: white;
+  }
+  a {
+    color: white;
+
+    &:hover {
+      color: #ffcc03;
+      border-bottom: none;
+    }
+  }
+}
 #core_footer {
   margin: 1rem 0;
   color: $white;
@@ -971,7 +975,9 @@ input[type="submit"] {
 b, strong, .bold {
   font-family: 'CoreBold';
 }
-
+.small {
+  font-size: 0.8rem;
+}
 .italics {
   font-style: italic;
   font-family: $CoreThin-Italic;
@@ -1040,6 +1046,9 @@ ul.pagination {
 }
 .text-uppercase {
   text-transform: uppercase;
+}
+#full-test {
+  background-color: $deep_purple;
 }
 
 // Hope you enjoyed inspecting my code, :D //

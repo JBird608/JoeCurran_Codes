@@ -6,3 +6,7 @@
     </div>
 </div>
 @stop
+
+@section('full-width')
+    @yield('full-width')
+@stop
