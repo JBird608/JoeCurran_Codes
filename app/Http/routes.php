@@ -1,6 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Mail;
+use App\Article;
+use App\ArticleCategory;
+use App\Meta;
 
 Route::group(['domain' => 'joecurrancodes.dev'], function () {
     Route::get('/', function () {
@@ -23,6 +25,27 @@ Route::group(['domain' => 'dev.joecurrancodes.dev'], function () {
     Route::post('contact', 'PagesController@contactPost');
     Route::get('projects', 'PagesController@projects');
     Route::get('dashboard', 'PagesController@dashboard');
+
+    Route::get('blog/category', function () {
+        return redirect('blog');
+    });
+
+    Route::get('blog/category/{slug}', function ($slug) {
+
+        $category = ArticleCategory::where('name', $slug)->first();
+
+        if (is_null($category)) {
+            return redirect('blog');
+        }
+
+        $articles = Article::where('category', $category->id)->published()->listing()->paginate(4);
+
+        $pagecode = '8PWLY8FGtvp2nQ5D';
+        $meta = Meta::where('code', $pagecode)->firstOrFail();
+        return view('core.article.index', compact('articles', 'meta'));
+
+    });
+
 
     /**
      * Blog or Article Requests.
