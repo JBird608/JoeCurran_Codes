@@ -21,7 +21,12 @@ class CreateArticleCategoriesTable extends Migration
         DB::table('article_categories')->insert(
             array(
                 array('name' => 'General'),
-                array('name' => 'Once in a Blue Moon'),
+                array('name' => 'Web Design'),
+                array('name' => 'Online Resources'),
+                array('name' => 'Net Magazine'),
+                array('name' => 'Tips, Tricks & More'),
+                array('name' => 'Web Technology'),
+                array('name' => 'The Connected Web'),
         ));
     }
 
