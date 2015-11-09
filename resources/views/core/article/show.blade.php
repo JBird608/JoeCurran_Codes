@@ -37,5 +37,11 @@
 @stop
 
 @section('js')
-    <script src=" {{ asset('assets/code/prism.js') }}"></script>
+    @if ($article->codepen == 1)
+        <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+    @endif
+    @if($article->prism == 1)
+        <script src=" {{ asset('assets/code/prism.js') }}"></script>
+    @endif
+
 @stop

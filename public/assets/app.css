@@ -60,9 +60,18 @@ input[type="submit"] {
   background-color: #3b217a;
   border: none;
   cursor: pointer;
+  min-width: 12rem;
   transition: background-color 0.5s ease; }
   input[type="submit"]:hover {
     background-color: #281652; }
+
+.switch span {
+  padding: 0.7rem;
+  position: absolute;
+  color: lightgray; }
+
+.switch input:checked + label {
+  background-color: #673AB7; }
 
 /**
   FORM ERRORS
@@ -239,6 +248,44 @@ div.success {
     margin-bottom: 0.5rem;
     min-height: 160px; }
 
+#login {
+  margin-top: 0;
+  background-size: auto;
+  background: url("../../img/bg.png") no-repeat right; }
+  #login #login_bg {
+    background-color: white;
+    padding: 1rem; }
+  #login .outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+  #login .middle {
+    display: table-cell;
+    vertical-align: middle; }
+  #login .inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%; }
+    @media only screen and (min-width: 64.063em) {
+      #login .inner {
+        max-width: 40%; } }
+    #login .inner a {
+      color: white;
+      border-bottom: none;
+      text-align: center;
+      display: block; }
+      #login .inner a:first-child {
+        font-size: 3rem;
+        font-family: "CoreBold", sans-serif; }
+      #login .inner a:last-child {
+        margin-top: 1rem;
+        font-family: "CoreThin", sans-serif; }
+      #login .inner a:hover {
+        color: #ffcc03; }
+  #login input[type="submit"] {
+    width: 100%; }
+
 #core_navigation {
   padding: 1rem 0 1rem 0;
   color: #fafafa;
@@ -413,16 +460,9 @@ div.success {
       margin-top: 0 !important;
       border-radius: 0 0 0.3rem 0.3rem !important; }
     #core_content article blockquote {
-      background-color: rgba(65, 190, 221, 0.1);
-      border-left: 0.2rem solid #41BEDD;
+      background-color: rgba(59, 33, 122, 0.1);
+      border-left: 0.3rem solid #3b217a;
       padding: 1rem; }
-      #core_content article blockquote:before {
-        content: '\201C';
-        float: left;
-        font-size: 7rem;
-        line-height: 1rem;
-        margin: 3.5rem 0.25rem 0 0;
-        color: rgba(65, 190, 221, 0.3); }
       #core_content article blockquote a {
         border-bottom: none; }
         #core_content article blockquote a:before {

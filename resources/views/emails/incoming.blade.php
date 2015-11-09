@@ -3,6 +3,7 @@
 <p>Message from: {{ $request['name'] }}</p>
 <p>Using: {{ $request['email'] }}</p>
 <p>Phone: @if(isset($request['phone'])) {{ $request['phone'] }} @else None Given! @endif</p>
+<p>Twitter {{ $request['topic'] }}</p>
 
 <p>Subject: {{ $request['subject'] }}</p>
 <p>Message:</p>

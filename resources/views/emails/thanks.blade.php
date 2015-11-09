@@ -6,7 +6,7 @@
 <p><strong>Message Sent:</strong> {{ $request['created_at'] }}</p>
 
 <p><strong>Subject Reads:</strong>
-{{ $request['subject'] }} @if (isset($request['topic'])) on the topic of {{ $request['topic'] }} @endif</p>
+<p>{{ $request['subject'] }}</p>
 
 <p><strong>Message Reads:</strong></p>
 <p>{{ $request['message'] }}</p>

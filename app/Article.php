@@ -21,7 +21,9 @@ class Article extends Model
         'slug',
         'tags',
         'location',
-        'published'
+        'published',
+        'codepen',
+        'prism',
     ];
 
     /**

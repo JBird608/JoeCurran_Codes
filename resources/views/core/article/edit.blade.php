@@ -1,7 +1,7 @@
 @extends('core.standard')
 
 @section('cover')
-    <h1>Add a new Article</h1>
+    <h1>Edit {!! $article->title !!}</h1>
 
     @include('errors.errors')
 @stop

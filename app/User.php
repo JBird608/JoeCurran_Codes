@@ -47,4 +47,16 @@ class User extends Model implements AuthenticatableContract,
         $this->attributes['level'] = 1;
     }
 
+    /**
+     * Function to check if the user has a level of 50+
+     *
+     * @return bool
+     */
+    public function isAEditor() {
+        if ($this->attributes['level'] > 50) {
+           return true;
+        }
+        return false;
+    }
+
 }

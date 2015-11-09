@@ -26,7 +26,7 @@ class CorrespondenceRequest extends Request
         return [
             'name'        => 'required|min:8|max:120',
             'email'       => 'required|email',
-            'phone'       => 'digits:11',
+            'phone'       => 'regex:/^([0-9\s\-\+\(\)]*)$/',
             'topic'       => 'max:25',
             'subject'     => 'required|max:60',
             'message'     => 'required',

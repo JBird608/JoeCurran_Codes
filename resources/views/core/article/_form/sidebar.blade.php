@@ -25,5 +25,15 @@
         <!-- Tags Form Input -->
         {!! Form::label('tags', 'Tags:') !!}
         {!! Form::text('tags') !!}
+
+        {!! Form::hidden('codepen', false) !!}
+        {!! Form::checkbox('codepen', true) !!}
+        {!! Form::label('codepen', 'Enable Code Pen') !!}
+
+        {!! Form::hidden('prism', false) !!}
+        {!! Form::checkbox('prism', true) !!}
+        {!! Form::label('prism', 'Enable Prism') !!}
+
+
     </div>
 </div>

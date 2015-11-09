@@ -17,11 +17,16 @@ use App\Http\Requests;
 
 class BlogController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('editor', ['except' => 'index']);
+    }
     /**
      * Function for the blog homepage, displaing all published posts.
      */
-    public function index() {
-        $pagecode = '2vq4KHidVogKpgZe';
+    public function index()
+    {
+        $pagecode = '5meuVGy2zOKvjsZO';
         $meta = Meta::where('code', $pagecode)->firstOrFail();
         // Get latest published articles, sorted by date & select only given fields.
         $articles = Article::latest('published')->published()->listing()->paginate(4);
@@ -31,17 +36,12 @@ class BlogController extends Controller
     /**
      * Function for update a blog article.
      */
-    public function create() {
-        $pagecode = '2vq4KHidVogKpgZ8';
+    public function create()
+    {
+        $pagecode = 'jeSu7UYVbVM6S0IF';
         $meta = Meta::where('code', $pagecode)->firstOrFail();
-
-        if (Auth::check() && Auth::user()->level > 50) {
-            $catergories = ArticleCategory::select('id', 'name')->get()->pluck('id', 'name')->flip();
-
-            return view('core.article.create', compact('catergories', 'meta'));
-        } else {
-            return Redirect::to('login');
-        }
+        $catergories = ArticleCategory::select('id', 'name')->get()->pluck('id', 'name')->flip();
+        return view('core.article.create', compact('catergories', 'meta'));
     }
 
     /**
@@ -51,7 +51,8 @@ class BlogController extends Controller
      * @param ArticleRequest $request
      * @return Redirect
      */
-    public function store(ArticleRequest $request) {
+    public function store(ArticleRequest $request)
+    {
 
         if ($request->has('slug')) {
             $request['slug'] = str_slug($request['slug'], "_");
@@ -59,21 +60,25 @@ class BlogController extends Controller
             $request['slug'] = str_slug($request['title'], "_");
         }
         $today = Carbon::today()->format('Y') . '/' . Carbon::today()->format('M') . '/' . Carbon::today()->format('d');
-        $uploadPath =  base_path() . '/public/img/uploads/' . $today;
+        $uploadPath = base_path() . '/public/img/uploads/' . $today;
 
         $article = Article::create($request->all());
-        $SmallImageName = '/img/uploads/' . $today . '/' . $request['slug'] . '_sml' . '.' . $request->file('listing-image')->getClientOriginalExtension();
-        $coverImageName = '/img/uploads/' . $today . '/' . $request['slug'] . '_cover' . '.' . $request->file('cover-image')->getClientOriginalExtension();
-        $article['imgfull'] = $coverImageName;
-        $article['imgsml'] = $SmallImageName;
+        if (!empty($article['imgfull']) || !empty($article['imgsml'])) {
+            $SmallImageName = '/img/uploads/' . $today . '/' . $request['slug'] . '_sml' . '.' . $request->file('listing-image')->getClientOriginalExtension();
+            $coverImageName = '/img/uploads/' . $today . '/' . $request['slug'] . '_cover' . '.' . $request->file('cover-image')->getClientOriginalExtension();
+            $article['imgfull'] = $coverImageName;
+            $article['imgsml'] = $SmallImageName;
+        }
         $article['page_code'] = str_random(16);
         $article['author'] = Auth::user()->id;
         $article['category'] = $request['category']; // TODO:: Preform a check to see if this Category Exists //
         $article['published'] = Carbon::parse($request['published']); // TODO:: Add a time to publish field //
         $article->save();
 
-        $request->file('listing-image')->move($uploadPath, $SmallImageName);
-        $request->file('cover-image')->move($uploadPath, $coverImageName);
+        if (!empty($article['imgfull']) || !empty($article['imgsml'])) {
+            $request->file('listing-image')->move($uploadPath, $SmallImageName);
+            $request->file('cover-image')->move($uploadPath, $coverImageName);
+        }
 
         return redirect('blog/' . $request->slug);
     }
@@ -85,7 +90,8 @@ class BlogController extends Controller
      * @return \Illuminate\View\View
      * @internal param $id
      */
-    public function show($slug) {
+    public function show($slug)
+    {
         $article = Article::where('slug', $slug)->firstOrFail();
         return view('core.article.' . $article->type, compact('article'));
     }
@@ -96,7 +102,8 @@ class BlogController extends Controller
      * @param $slug
      * @return \Illuminate\View\View
      */
-    public function edit($slug) {
+    public function edit($slug)
+    {
         $article = Article::where('slug', $slug)->firstOrFail();
         $catergories = ArticleCategory::select('id', 'name')->get()->pluck('id', 'name')->flip();
         return view('core.article.edit', compact('article', 'catergories'));
@@ -110,7 +117,8 @@ class BlogController extends Controller
      * @internal param $slug
      * @return Redirect
      */
-    public function update($slug, ArticleRequest $request) {
+    public function update($slug, ArticleRequest $request)
+    {
         $article = Article::where('slug', $slug)->firstOrFail();
         $article->update($request->all());
 
@@ -122,7 +130,8 @@ class BlogController extends Controller
      *
      * @param $id
      */
-    public function destroy($id) {
+    public function destroy($id)
+    {
 
     }
 }

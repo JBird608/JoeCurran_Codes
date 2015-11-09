@@ -11,8 +11,12 @@
                 </div>
             </div>
             <div class="small-12 columns form">
-                @if (count($errors) > 0)<div class="error"><strong>Whoops!</strong> There were some problems with your input.</div> @endif
-                @if (session()->has('success')) <div class="success"><strong>Thanks!</strong> Your message has been sent, you should fine a copy in your own inbox.</div> @endif
+                @if (count($errors) > 0)
+                    <div class="error"><strong>Whoops!</strong> There were some problems with your input.</div> @endif
+                @if (session()->has('success'))
+                    <div class="success"><strong>Thanks!</strong> Your message has been sent, you should fine a copy in
+                        your own inbox.
+                    </div> @endif
 
                 {!! Form::open() !!}
                 <div class="row">
@@ -49,7 +53,7 @@
                         <!-- Intrested Form Input -->
                         <div class="form-group">
                             @if ($errors->has('topic')) <label class="error" for="intrested"> @endif
-                                {!! Form::text('topic', null, array('placeholder' => 'Message Topic') ) !!}
+                                {!! Form::text('topic', null, array('id' => 'topic', 'placeholder' => 'Twitter Username i.e @JBird608') ) !!}
                                 @if ($errors->has('topic')) </label>
                             <small class="error">{{ $errors->first('topic') }}</small> @endif
                         </div>
@@ -115,4 +119,20 @@
 
         </div>
     </div>
+@stop
+@section('js')
+    <script>
+        $(document).ready(function () {
+
+            $("#topic").focus(function () {
+                $("#topic").val("@");
+            });
+            $("#topic").blur(function () {
+                var val = $("#topic").val();
+                if(val == "@") {
+                    $("#topic").val('');
+                }
+            });
+        });
+    </script>
 @stop

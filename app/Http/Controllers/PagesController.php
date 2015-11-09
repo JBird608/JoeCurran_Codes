@@ -21,7 +21,7 @@ class PagesController extends Controller
     * Function for Index Home Page.
     */
     public function index(){
-        $pagecode = 'skzae4YRmyDGX4Jk';
+        $pagecode = 'DGgsmT9iTEObJ1dD';
         $meta = Meta::where('code', $pagecode)->firstOrFail();
         $articles = Article::latest('published')->published()->listing()->limit(3)->get();
         $tweet = Twitter::getUserTimeline(['screen_name' => 'jbird608', 'count' => 1]);
@@ -33,14 +33,14 @@ class PagesController extends Controller
     }
 
     public function about(){
-        $pagecode = 'skzae4YRmyDGX4JR';
+        $pagecode = 'tUZ8MMVRz6yb88iv';
         $meta = Meta::where('code', $pagecode)->firstOrFail();
 
         return view('core.pages.about', compact('meta'));
     }
 
     public function contact() {
-        $pagecode = 'skzae4YRmyDGX4JR';
+        $pagecode = 'rJvGPUVfUxm2TBDg';
         $meta = Meta::where('code', $pagecode)->firstOrFail();
         return view('core.pages.contact', compact('meta'));
     }
@@ -87,7 +87,7 @@ class PagesController extends Controller
     * Using
     */
     public function projects(){
-        $pagecode = 'skzae4YRmyDGX4JR';
+        $pagecode = 'zbQTVfF6VfJry6LI';
         $meta = Meta::where('code', $pagecode)->firstOrFail();
         return view('core.pages.folio', compact('meta'));
     }
@@ -97,8 +97,11 @@ class PagesController extends Controller
     * Using
     */
     public function dashboard(){
+        $pagecode = '1o3wTvPBraUILjQZ';
+        $meta = Meta::where('code', $pagecode)->firstOrFail();
         if (Auth::check()) {
-            return view('core.standard');
+            return Redirect::to('/');
+            return view('core.standard', compact('meta'));
         } else {
             return Redirect::to('login');
         }

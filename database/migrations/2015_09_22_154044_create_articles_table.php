@@ -25,6 +25,8 @@ class CreateArticlesTable extends Migration
             $table->string('slug')->unique();
             $table->integer('author');
             $table->integer('category');
+            $table->boolean('codepen');
+            $table->boolean('prism');
             $table->string('tags')->nullable();
             $table->integer('poll_id')->nullable();
             $table->integer('location_id')->nullable();

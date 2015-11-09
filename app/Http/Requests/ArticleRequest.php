@@ -40,7 +40,7 @@ class ArticleRequest extends Request
             'category'     => 'required|exists:article_categories,id',
             'slug'         => 'regex:/^[a-z0-9_ ]+$/i',
             'listing-image'=> 'mimes:png,jpg,jpeg',
-            'cover-image'  => 'mimes:png,jpg,jpeg',
+            'cover-image'  => 'mimes:png,jpg,jpeg'
         ];
     }
 }
