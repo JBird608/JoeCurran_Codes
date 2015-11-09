@@ -19,7 +19,7 @@ class BlogController extends Controller
 {
 
     public function __construct() {
-        $this->middleware('editor', ['except' => 'index']);
+        $this->middleware('editor', ['only' => 'create']);
     }
     /**
      * Function for the blog homepage, displaing all published posts.
