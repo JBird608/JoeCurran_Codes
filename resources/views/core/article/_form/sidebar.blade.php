@@ -20,7 +20,7 @@
 
         {!! Form::label('listing-image', 'Listing Image:') !!}
         {!! Form::file('listing-image') !!}
-        <p>Image need to be size: 650 by 300 px.</p>
+        <p>Image need to be size: 970 by 300 px.</p>
 
         <!-- Tags Form Input -->
         {!! Form::label('tags', 'Tags:') !!}

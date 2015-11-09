@@ -63,7 +63,9 @@ class BlogController extends Controller
         $uploadPath = base_path() . '/public/img/uploads/' . $today;
 
         $article = Article::create($request->all());
-        if (!empty($article['imgfull']) || !empty($article['imgsml'])) {
+
+        // TODO: Refine into two seperate actions //
+        if (!empty($request['cover-image']) || !empty($request['cover-image'])) {
             $SmallImageName = '/img/uploads/' . $today . '/' . $request['slug'] . '_sml' . '.' . $request->file('listing-image')->getClientOriginalExtension();
             $coverImageName = '/img/uploads/' . $today . '/' . $request['slug'] . '_cover' . '.' . $request->file('cover-image')->getClientOriginalExtension();
             $article['imgfull'] = $coverImageName;
@@ -75,7 +77,7 @@ class BlogController extends Controller
         $article['published'] = Carbon::parse($request['published']); // TODO:: Add a time to publish field //
         $article->save();
 
-        if (!empty($article['imgfull']) || !empty($article['imgsml'])) {
+        if (!empty($request['cover-image']) || !empty($request['cover-image'])) {
             $request->file('listing-image')->move($uploadPath, $SmallImageName);
             $request->file('cover-image')->move($uploadPath, $coverImageName);
         }
