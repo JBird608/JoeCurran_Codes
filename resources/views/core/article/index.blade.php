@@ -35,5 +35,5 @@
 @stop
 
 @section('sidebar')
-
+    @include('core._elements.sidebar.search')
 @stop

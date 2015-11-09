@@ -120,6 +120,7 @@
         </div>
     </div>
 @stop
+
 @section('js')
     <script>
         $(document).ready(function () {

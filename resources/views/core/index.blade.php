@@ -20,7 +20,7 @@
                 <div class="small-12 columns">
                     <h1>Wesite Designer & Developer</h1>
                     <p>Hi there, my name is Joe Curran a 21 year old website developer based in the UK.</p>
-                    <div class="index_btn"><a href="{{ action('BlogController@index') }}" class="btn outline">Read my Blog</a><a href="{{ action('PagesController@projects') }}" class="btn outline">Check out my Work</a></div>
+                    <div class="index_btn"><a href="{{ action('BlogController@index') }}" class="outline">Read my Blog</a><a href="{{ action('PagesController@projects') }}" class="outline">Check out my Work</a></div>
                     <div id="index_social">
                         <a href="https://twitter.com/jbird608/" title="Follow @JBird608 on Twitter"><i class="fa fa-twitter"></i></a>
                         <a href="https://uk.linkedin.com/in/joecurrancodes" title="Find me on LinkedIn"><i class="fa fa-linkedin"></i></a>

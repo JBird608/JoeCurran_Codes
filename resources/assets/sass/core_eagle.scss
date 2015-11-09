@@ -128,7 +128,7 @@ textarea {
   resize: none;
 }
 
-input[type="submit"] {
+.btn, button, input[type="submit"] {
   padding: 1rem;
   font-family: $CoreBold;
   font-size: 1rem;
