@@ -27,6 +27,8 @@ class CreateArticleCategoriesTable extends Migration
                 array('name' => 'Tips, Tricks & More'),
                 array('name' => 'Web Technology'),
                 array('name' => 'The Connected Web'),
+                array('name' => 'Search Engine Optimisation (SEO)'),
+                array('name' => 'Social Media'),
         ));
     }
 
